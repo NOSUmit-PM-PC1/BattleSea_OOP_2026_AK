@@ -9,7 +9,8 @@ namespace BattleSea_OOP_2026
 {
     public class Field
     {
-        public const int SIZE = 10;   
+        public const int SIZE = 10;
+        const int MISS = 3;
         List<Ship> ships = new List<Ship>();
 
         int[,] hit_matrix = new int[SIZE, SIZE];
@@ -81,5 +82,25 @@ namespace BattleSea_OOP_2026
             return hit_matrix[row, col]; 
         }
 
+        bool CheckFireShips(int row, int col)
+        {
+            foreach (var ship in ships)
+            {
+                if (ship.Fire(row, col))
+                {
+                    ship.ToMatrix(hit_matrix);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void Fire(int row, int col)
+        {
+            if (!CheckFireShips(row, col))
+            {
+                hit_matrix[row, col] = MISS;
+            }
+        }
     }
 }

@@ -32,5 +32,12 @@ namespace BattleSea_OOP_2026
         {
             m[Y, X] = Convert.ToInt32(hit);
         }
+
+        public bool Fire(int x, int y)
+        { 
+            if (X == x && Y == y)
+                hit = true;
+            return hit;
+        }
     }
 }

@@ -17,8 +17,11 @@ namespace BattleSea_OOP_2026
             Properties.Resources._0,
             Properties.Resources._1,
             Properties.Resources._2,
-            Properties.Resources._3
+            Properties.Resources._3,
+            Properties.Resources._4
         };
+
+
         Field myField;
 
         public FormGame()
@@ -33,7 +36,7 @@ namespace BattleSea_OOP_2026
         }
 
         void ShowField(Field f)
-        { 
+        {
             dataGridViewMyField.CurrentCell = null;
             dataGridViewMyField.ClearSelection();
             dataGridViewMyField.Rows.Clear();  
@@ -60,6 +63,12 @@ namespace BattleSea_OOP_2026
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridViewMyField_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            myField.Fire(e.RowIndex, e.ColumnIndex);
+            ShowField(myField);
         }
     }
 }

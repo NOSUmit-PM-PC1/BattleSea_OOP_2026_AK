@@ -41,10 +41,16 @@ namespace BattleSea_OOP_2026
 
         public void ToMatrix(int[,] m)
         {
-            foreach (var cell in cells)
-            { 
-                m[cell.Y, cell.X] = (int)(status)+1;
-            }
+            if (status == ShipStatus.Dead)
+                foreach (var cell in cells)
+                {
+                    m[cell.Y, cell.X] = (int)status + 1;
+                }
+            else
+                foreach (var cell in cells)
+                {
+                    m[cell.Y, cell.X] = Convert.ToInt16(cell.isHit()) + 1;
+                }
         }
 
         public int CountHit()
@@ -58,6 +64,24 @@ namespace BattleSea_OOP_2026
         public override string ToString()
         {
             return $"{cells.Count} - {cells[0].X}, {cells[0].Y}: {CountHit()}";
+        }
+
+        public bool Fire(int row, int col)
+        {
+            foreach (Cell cell in cells)
+            {
+                if (cell.Fire(col, row))
+                {
+                    int countHit = CountHit();
+                    if (countHit < cells.Count)
+                        status = ShipStatus.Wounded;
+                    else 
+                        if (countHit == cells.Count)
+                            status = ShipStatus.Dead;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

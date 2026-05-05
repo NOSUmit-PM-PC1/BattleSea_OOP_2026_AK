@@ -64,7 +64,6 @@
             this.Column9,
             this.Column10});
             this.dataGridViewMyField.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewMyField.Enabled = false;
             this.dataGridViewMyField.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewMyField.Name = "dataGridViewMyField";
             this.dataGridViewMyField.ReadOnly = true;
@@ -72,6 +71,7 @@
             this.dataGridViewMyField.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewMyField.Size = new System.Drawing.Size(450, 450);
             this.dataGridViewMyField.TabIndex = 0;
+            this.dataGridViewMyField.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMyField_CellClick);
             // 
             // Column1
             // 
