@@ -217,7 +217,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewMyField);
             this.Name = "FormGame";
-            this.Text = "Form1";
+            this.Text = "Морской бой";
             this.Load += new System.EventHandler(this.FormGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyField)).EndInit();
             this.ResumeLayout(false);

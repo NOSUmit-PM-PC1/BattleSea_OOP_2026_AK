@@ -25,6 +25,8 @@ namespace BattleSea_OOP_2026
         List<Cell> cells;
         ShipStatus status;
 
+        public ShipStatus Status { get { return status; } }
+
         public Ship(int size, int startX, int startY, Direction dir)
         {
             int dx, dy;

@@ -64,6 +64,39 @@ namespace BattleSea_OOP_2026
            //CreateTestField();
         }
 
+        public int CountAllShips()
+        {
+            int count = 0;
+            foreach (var ship in ships)
+            { 
+                if (ship.Status == ShipStatus.Normal || ship.Status == ShipStatus.Wounded)
+                    count++;
+            }
+            return count;
+        }
+
+        public int CountAllWounded()
+        {
+            int count = 0;
+            foreach (var ship in ships)
+            {
+                if (ship.Status == ShipStatus.Wounded)
+                    count++;
+            }
+            return count;
+        }
+
+        public int CountAllDead()
+        {
+            int count = 0;
+            foreach (var ship in ships)
+            {
+                if (ship.Status == ShipStatus.Dead)
+                    count++;
+            }
+            return count;
+        }
+
         public bool CanPlaceShip(int size, int startX, int startY, Direction dir)
         {
             int dx, dy;

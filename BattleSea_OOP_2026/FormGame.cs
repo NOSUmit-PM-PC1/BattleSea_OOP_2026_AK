@@ -34,8 +34,10 @@ namespace BattleSea_OOP_2026
         {
             myField = new Field();
             ShowField(myField);
+            labelAllShips.Text = myField.CountAllShips().ToString();
+            labelAllWounded.Text = myField.CountAllWounded().ToString();
+            labelAllDead.Text = myField.CountAllDead().ToString();
         }
-
         void CreateField()
         {
             dataGridViewMyField.RowCount = Field.SIZE;
@@ -59,7 +61,6 @@ namespace BattleSea_OOP_2026
                     dataGridViewMyField.Rows[i].Cells[j].Value = images[f.Matrix(i, j)];
                 }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -69,6 +70,9 @@ namespace BattleSea_OOP_2026
         {
             myField.Fire(e.RowIndex, e.ColumnIndex);
             ShowField(myField);
+            labelAllShips.Text = myField.CountAllShips().ToString();
+            labelAllWounded.Text = myField.CountAllWounded().ToString();
+            labelAllDead.Text = myField.CountAllDead().ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
