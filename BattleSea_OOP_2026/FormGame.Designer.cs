@@ -40,7 +40,12 @@
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelAllShips = new System.Windows.Forms.Label();
+            this.labelAllDead = new System.Windows.Forms.Label();
+            this.labelAllWounded = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMyField)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,7 +140,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(535, 138);
+            this.button1.Location = new System.Drawing.Point(537, 408);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -143,19 +148,72 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(498, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(487, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Все кораблей";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(487, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Всего убитых";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(487, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Всего раненых";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // labelAllShips
+            // 
+            this.labelAllShips.AutoSize = true;
+            this.labelAllShips.Location = new System.Drawing.Point(589, 71);
+            this.labelAllShips.Name = "labelAllShips";
+            this.labelAllShips.Size = new System.Drawing.Size(35, 13);
+            this.labelAllShips.TabIndex = 5;
+            this.labelAllShips.Text = "label4";
+            // 
+            // labelAllDead
+            // 
+            this.labelAllDead.AutoSize = true;
+            this.labelAllDead.Location = new System.Drawing.Point(589, 103);
+            this.labelAllDead.Name = "labelAllDead";
+            this.labelAllDead.Size = new System.Drawing.Size(35, 13);
+            this.labelAllDead.TabIndex = 6;
+            this.labelAllDead.Text = "label5";
+            // 
+            // labelAllWounded
+            // 
+            this.labelAllWounded.AutoSize = true;
+            this.labelAllWounded.Location = new System.Drawing.Point(589, 142);
+            this.labelAllWounded.Name = "labelAllWounded";
+            this.labelAllWounded.Size = new System.Drawing.Size(35, 13);
+            this.labelAllWounded.TabIndex = 7;
+            this.labelAllWounded.Text = "label6";
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(708, 473);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelAllWounded);
+            this.Controls.Add(this.labelAllDead);
+            this.Controls.Add(this.labelAllShips);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewMyField);
             this.Name = "FormGame";
@@ -181,7 +239,12 @@
         private System.Windows.Forms.DataGridViewImageColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Column10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelAllShips;
+        private System.Windows.Forms.Label labelAllDead;
+        private System.Windows.Forms.Label labelAllWounded;
     }
 }
 

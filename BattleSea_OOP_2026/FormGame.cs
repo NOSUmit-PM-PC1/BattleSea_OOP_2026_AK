@@ -27,6 +27,7 @@ namespace BattleSea_OOP_2026
         public FormGame()
         {
             InitializeComponent();
+            CreateField();
         }
 
         private void FormGame_Load(object sender, EventArgs e)
@@ -35,24 +36,23 @@ namespace BattleSea_OOP_2026
             ShowField(myField);
         }
 
-        void ShowField(Field f)
+        void CreateField()
         {
-            dataGridViewMyField.CurrentCell = null;
-            dataGridViewMyField.ClearSelection();
-            dataGridViewMyField.Rows.Clear();  
             dataGridViewMyField.RowCount = Field.SIZE;
             dataGridViewMyField.ColumnCount = Field.SIZE;
             dataGridViewMyField.Size = new Size(470, 450);
-            
+
 
             for (int i = 0; i < Field.SIZE; i++)
             {
                 dataGridViewMyField.Rows[i].Height = 40;
-                dataGridViewMyField.Rows[i].HeaderCell.Value = (i+1).ToString();
+                dataGridViewMyField.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 dataGridViewMyField.Columns[i].Width = 40;
                 dataGridViewMyField.Columns[i].HeaderCell.Value = ((char)('А' + i)).ToString();
             }
-
+        }
+        void ShowField(Field f)
+        {
             for (int i = 0; i < Field.SIZE; i++)
                 for (int j = 0; j < Field.SIZE; j++)
                 {
@@ -69,6 +69,11 @@ namespace BattleSea_OOP_2026
         {
             myField.Fire(e.RowIndex, e.ColumnIndex);
             ShowField(myField);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

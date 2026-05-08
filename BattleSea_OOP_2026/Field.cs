@@ -4,13 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.AxHost;
 
 namespace BattleSea_OOP_2026
 {
     public class Field
     {
         public const int SIZE = 10;
-        const int MISS = 3;
+        const int MISS = 4;
         List<Ship> ships = new List<Ship>();
 
         int[,] hit_matrix = new int[SIZE, SIZE];
@@ -25,7 +26,7 @@ namespace BattleSea_OOP_2026
             { 4, 1 }
         };
 
-        public Field() 
+        void CreateRandomField()
         {
             foreach (var item in CountShips)
             {
@@ -35,7 +36,7 @@ namespace BattleSea_OOP_2026
 
                     while (!placed)
                     {
-                        Direction dir = (Direction)random.Next(0,2);
+                        Direction dir = (Direction)random.Next(0, 2);
                         int startX = random.Next(0, SIZE);
                         int startY = random.Next(0, SIZE);
                         if (CanPlaceShip(item.Key, startX, startY, dir))
@@ -48,6 +49,19 @@ namespace BattleSea_OOP_2026
                     }
                 }
             }
+        }
+
+        void CreateTestField()
+        {
+            Ship temp = new Ship(1, 2, 2, Direction.Right);
+            ships.Add(temp);
+            temp.ToMatrix(hit_matrix);
+        }
+
+        public Field() 
+        {
+           CreateRandomField();
+           //CreateTestField();
         }
 
         public bool CanPlaceShip(int size, int startX, int startY, Direction dir)

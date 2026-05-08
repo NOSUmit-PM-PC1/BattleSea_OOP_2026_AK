@@ -34,10 +34,13 @@ namespace BattleSea_OOP_2026
         }
 
         public bool Fire(int x, int y)
-        { 
+        {
             if (X == x && Y == y)
+            {
                 hit = true;
-            return hit;
+                return true;
+            }
+            return false;
         }
     }
 }
