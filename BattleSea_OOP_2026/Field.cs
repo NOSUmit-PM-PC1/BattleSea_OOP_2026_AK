@@ -10,13 +10,13 @@ namespace BattleSea_OOP_2026
 {
     public class Field
     {
+        static Random random = new Random();
+
         public const int SIZE = 10;
         const int MISS = 4;
         List<Ship> ships = new List<Ship>();
 
         int[,] hit_matrix = new int[SIZE, SIZE];
-
-        Random random = new Random();
 
         Dictionary<int, int> CountShips = new Dictionary<int, int>()
         {
